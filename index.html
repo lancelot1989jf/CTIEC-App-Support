@@ -1,21 +1,290 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CTIEC数字工具集 - 技术支持</title>
+  <meta name="description" content="CTIEC数字工具集 技术支持与隐私说明页面" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2e;
+      --muted:#a9b4c7;
+      --text:#eaf0ff;
+      --line:rgba(255,255,255,.08);
+      --accent:#58a6ff;
+      --accent2:#2dd4bf;
+      --warn:#fbbf24;
+      --ok:#34d399;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Hiragino Sans GB",
+                   "Microsoft YaHei", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(88,166,255,.18), transparent 60%),
+        radial-gradient(700px 400px at 90% 20%, rgba(45,212,191,.14), transparent 60%),
+        radial-gradient(900px 600px at 50% 100%, rgba(251,191,36,.10), transparent 60%),
+        var(--bg);
+      line-height:1.65;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{
+      max-width:var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+    header{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:46px;height:46px;border-radius:14px;
+      background: linear-gradient(135deg, rgba(88,166,255,.95), rgba(45,212,191,.85));
+      box-shadow: var(--shadow);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;color:#07101f;
+      letter-spacing:.5px;
+    }
+    .title h1{margin:0;font-size:26px;letter-spacing:.2px}
+    .title p{margin:6px 0 0;color:var(--muted);font-size:13.5px}
+    .hero{
+      margin-top:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .badge{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:6px 10px;border-radius:999px;
+      font-size:12.5px;color:var(--muted)
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    @media(min-width:860px){
+      .grid{grid-template-columns: 1fr 1fr}
+    }
+    .card{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 6px rgba(45,212,191,.12);
+    }
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 20px}
+    li{margin:6px 0}
+    .kv{
+      display:grid;grid-template-columns: 110px 1fr;
+      gap:10px;
+      margin-top:10px;
+      padding-top:10px;
+      border-top:1px dashed var(--line);
+      font-size:14px;
+    }
+    .k{color:var(--muted)}
+    .v{color:var(--text); word-break:break-word}
+    .pill{
+      display:inline-block;
+      padding:2px 8px;border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      font-size:12px;color:var(--muted)
+    }
+    .callout{
+      margin-top:14px;
+      border:1px solid rgba(88,166,255,.35);
+      background: rgba(88,166,255,.08);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .callout strong{color:#cfe5ff}
+    .faq details{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-top:10px;
+    }
+    .faq summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      font-weight:600;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .chev{color:var(--muted)}
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12.5px;
+      text-align:center;
+    }
+    .small{font-size:12.5px}
+    code{
+      background: rgba(0,0,0,.25);
+      border:1px solid var(--line);
+      padding:2px 6px;border-radius:8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      color:#cfe5ff;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>CTIEC数字工具集 技术支持</h1>
+  <div class="wrap">
 
-  <p>如在使用过程中遇到问题，请通过以下方式联系我们：</p>
+    <header>
+      <div class="logo">CT</div>
+      <div class="title">
+        <h1>CTIEC数字工具集 · 技术支持</h1>
+        <p>企业内部工具集：智能对话 / 文档处理 / 辅助办公</p>
+      </div>
+    </header>
 
-  <ul>
-    <li>技术支持邮箱：support@ctiecmis.com</li>
-  </ul>
+    <section class="hero">
+      <div class="muted">
+        如果你在使用过程中遇到登录、网络、文件上传、文档处理等问题，请优先通过邮箱联系我们。我们会在工作日尽快回复。
+      </div>
+      <div class="badges">
+        <span class="badge">支持渠道：邮箱</span>
+        <span class="badge">支持范围：登录 / 网络 / 文档处理</span>
+        <span class="badge">数据存储：企业自有服务器</span>
+        <span class="badge">访问权限：企业内部授权用户</span>
+      </div>
 
-  <h2>隐私说明</h2>
-  <p>本应用仅面向企业内部用户使用，所有数据均存储于企业自有服务器。</p>
+      <div class="kv">
+        <div class="k">技术支持邮箱</div>
+        <div class="v"><a href="mailto:support@ctiecmis.com">support@ctiecmis.com</a></div>
 
-  <p>© 2026 CTIEC</p>
+        <div class="k">应用名称</div>
+        <div class="v">CTIEC数字工具集</div>
+
+        <div class="k">适用人群</div>
+        <div class="v">企业内部授权用户 <span class="pill">非公开服务</span></div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2><span class="dot"></span>常见问题（FAQ）</h2>
+        <div class="faq small">
+          <details>
+            <summary>1）无法登录或登录后一直转圈 <span class="chev">▾</span></summary>
+            <div class="muted">
+              建议按顺序排查：<br/>
+              ① 确认网络可访问企业服务器；② 关闭 VPN 后重试；③ 切换 Wi-Fi/移动网络；
+              ④ 若仍失败，请发邮件并附上截图与发生时间。
+            </div>
+          </details>
+
+          <details>
+            <summary>2）上传文件失败/提示超时 <span class="chev">▾</span></summary>
+            <div class="muted">
+              常见原因是网络质量或文件过大。请尝试更稳定网络，或将文件拆分后再上传。
+            </div>
+          </details>
+
+          <details>
+            <summary>3）文档处理结果异常/页面空白 <span class="chev">▾</span></summary>
+            <div class="muted">
+              请在邮件中提供：任务时间、文件类型（pdf/docx/图片）、异常截图，以及（可选）任务ID。
+            </div>
+          </details>
+
+          <details>
+            <summary>4）提示需要相册/相机权限 <span class="chev">▾</span></summary>
+            <div class="muted">
+              应用在“选择图片/上传附件/拍照”等场景可能需要访问相册或相机。你可以在 iOS「设置 → 隐私与安全性」中随时更改授权。
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2><span class="dot"></span>权限与用途说明</h2>
+        <ul class="small">
+          <li><strong>相机权限</strong>：用于拍摄图片/文档，辅助上传或扫描识别。</li>
+          <li><strong>相册权限</strong>：用于从相册选择图片上传，或保存/分享生成文件（若启用）。</li>
+          <li><strong>文件访问</strong>：用于选择本地文件并上传处理、下载处理结果。</li>
+        </ul>
+
+        <div class="callout small">
+          <strong>我们不会</strong>在未经你主动操作的情况下读取相册内容或后台录制音视频。
+        </div>
+      </section>
+
+      <section class="card">
+        <h2><span class="dot"></span>数据与隐私说明</h2>
+        <ul class="small">
+          <li>本应用主要面向企业内部授权用户使用。</li>
+          <li>业务数据（对话、文件、处理结果等）用于提供功能服务与故障排查。</li>
+          <li>数据存储与访问受企业内部管理与权限策略约束。</li>
+        </ul>
+
+        <div class="kv">
+          <div class="k">数据存储位置</div>
+          <div class="v">企业自有服务器（受权限控制）</div>
+
+          <div class="k">数据用途</div>
+          <div class="v">提供服务、质量改进、故障排查</div>
+
+          <div class="k">数据删除</div>
+          <div class="v">如需删除相关数据，请联系技术支持邮箱</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2><span class="dot"></span>反馈时请提供这些信息</h2>
+        <div class="muted small">
+          为了更快定位问题，建议复制以下模板发送到邮箱：
+        </div>
+        <ul class="small">
+          <li>问题描述：例如“登录后白屏/上传失败/处理超时”</li>
+          <li>发生时间：YYYY-MM-DD HH:mm</li>
+          <li>网络环境：Wi-Fi/移动网络，是否使用 VPN</li>
+          <li>设备信息：iPhone 型号 + iOS 版本</li>
+          <li>应用版本：<code>1.0.0</code>（如有更新可填写实际版本）</li>
+          <li>截图/录屏：包含报错提示或异常页面</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <div>© 2026 CTIEC · 技术支持与隐私说明</div>
+      <div class="small">此页面用于 App Store Connect 技术支持信息展示。</div>
+    </footer>
+
+  </div>
 </body>
 </html>
